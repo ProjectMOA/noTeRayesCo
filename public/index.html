@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="favicons/favicon.jpg" />
+  <title>No te rayes CO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!--load the favicons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- css own imports -->
+  <link rel="stylesheet" href="css/generalStyle.css" />
+</head>
+
+<body>
+
+<div class="bgimg">
+  <div class="topleft">
+    <p>Logo</p>
+  </div>
+  <div class="middle">
+    <div id="demo"></div>
+  </div>
+  <div class="bottomleft">
+    <p style="font-size: 12px">© 2017 |
+      <a href="https://github.com/nebur395" target="_blank" id="githubLink"> Rubén Moreno
+        <i class="fa fa-github"></i></a>
+    </p>
+  </div>
+</div>
+
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Oct 7, 2017 00:00:00").getTime();
+
+    // Update the count down every 1 second
+    var countdownfunction = setInterval(function() {
+
+        // Get todays date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now an the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML ="<h1>No te rayes CO, que sólo quedan</h1><hr>" +
+          "<p style='font-size:30px'>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s</p><hr>" +
+          "<h1>para pilares.</h1>";
+
+        // If the count down is over, write some text
+        if (distance <= 0) {
+            clearInterval(countdownfunction);
+            document.getElementById("demo").innerHTML = "¡¡¡¡NO TE RAYES CO, QUE SON PILARESSSSS!!!!";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
