@@ -9,6 +9,9 @@
   <!--load the favicons-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <!-- AngularJS imports -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
   <!-- css own imports -->
   <link rel="stylesheet" href="css/generalStyle.css" />
 </head>
@@ -16,8 +19,8 @@
 <body>
 
 <div class="bgimg">
-  <div class="topleft">
-    <p>Logo</p>
+  <div class="topleft" ng-app="noTeRayesCoApp" ng-controller="visits">
+    <p>{{nVisits}} visitas</p>
   </div>
   <div class="middle">
     <div id="demo"></div>
@@ -62,5 +65,13 @@
     }, 1000);
 </script>
 
+<script>
+  var app=angular.module('noTeRayesCoApp', []);
+  app.controller('visits', function($scope, $http) {
+      $http.get("getVisits").then(function(response) {
+          $scope.nVisits = 123123;// response.data;
+    });
+  })
+</script>
 </body>
 </html>
