@@ -1,7 +1,7 @@
 # No te rayes CO, que son pilares
-Cuenta atrás para poder decir la esperada frase del año: ***"No te rayes CO, que son pilares"***.
+Cuenta atrás para poder decir la esperada frase del año: ***No te rayes CO, que son pilares***.
 
-Si eres de esos ansiosos que no pueden esperar a la fecha, siempre puedes acudir a la frase: ***"No te rayes CO, que quedan X días para pilares"***.
+Si eres de esos ansiosos que no pueden esperar a la fecha, siempre puedes acudir a la frase:  ***No te rayes CO, que quedan 200 días para pilares***.
 
 ## Start using this App
 
