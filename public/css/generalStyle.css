@@ -51,11 +51,15 @@ a:focus, a:hover, a {
   cursor: pointer
 }
 
-#githubLink {
+.githubLink {
   color: #3f51b5!important
 }
-#githubLink:hover {
+.githubLink:hover {
   color: #87CEEB!important
+}
+
+#small-text {
+  font-size: 12px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -64,5 +68,8 @@ a:focus, a:hover, a {
   }
   .middle p{
     font-size: 20px;
+  }
+  #small-text {
+    font-size: 10px;
   }
 }
