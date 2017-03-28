@@ -1,0 +1,31 @@
+{
+  "name": "noterayesco",
+  "version": "1.0.0",
+  "description": "No te rayes",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nebur395/noTeRayesCo.git"
+  },
+  "keywords": [
+    "Zaragoza",
+    "Pilar",
+    "Fiestas",
+    "Noterayes"
+  ],
+  "author": "Ruben Moreno Jimeno and David Nicuesa Aranda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nebur395/noTeRayesCo/issues"
+  },
+  "homepage": "https://github.com/nebur395/noTeRayesCo#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "multer": "^1.3.0"
+  }
+}
