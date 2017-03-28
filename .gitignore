@@ -47,4 +47,7 @@ gradle-app.settings
 .gradletasknamecache
 
 ## Compiled java objects
-classes
+classesa
+
+## Node modules
+node_modules/
