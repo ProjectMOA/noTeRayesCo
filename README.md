@@ -13,6 +13,10 @@ You can install the node dependencies executing `npm install`and run the applica
 
 Now you can access the server in http://localhost:8080.
 
+# Ayúdanos a mejorar :D
+
+Cualquier mejora o sugerencia que se te ocurra puedes dejárnosla en forma de Pull Requests o con una Issue, pero si tardamos en responderos lo dicho, no os rayéis que ya casi son pilares.
+
 # EditorConfig 
 [EditorConfig](http://editorconfig.org/) helps developers maintain consistent coding styles between different editors and IDEs. It is a file format for defining coding styles and a collection of text editor plugins that enable editors to read the file format and adhere to defined styles.
 You need to create a .editorconfig file in which you define the coding style rules. It is similar to the format accepted by gitignore.
