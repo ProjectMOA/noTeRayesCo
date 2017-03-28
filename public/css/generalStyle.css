@@ -33,6 +33,12 @@ body, html {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+.middle p {
+  font-size: 30px;
+}
+.middle h1 {
+  font-size: 200%;
+}
 
 hr {
   margin: auto;
@@ -45,9 +51,25 @@ a:focus, a:hover, a {
   cursor: pointer
 }
 
-#githubLink {
+.githubLink {
   color: #3f51b5!important
 }
-#githubLink:hover {
+.githubLink:hover {
   color: #87CEEB!important
+}
+
+#small-text {
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+  .middle h1{
+    font-size: 125%;
+  }
+  .middle p{
+    font-size: 20px;
+  }
+  #small-text {
+    font-size: 10px;
+  }
 }

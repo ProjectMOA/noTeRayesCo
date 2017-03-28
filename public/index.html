@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="shortcut icon" type="image/x-icon" href="favicons/favicon.jpg" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicons/favicon.png" />
   <title>No te rayes CO</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!--load the favicons-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- AngularJS imports -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
   <!-- css own imports -->
   <link rel="stylesheet" href="css/generalStyle.css" />
@@ -16,16 +19,17 @@
 <body>
 
 <div class="bgimg">
-  <div class="topleft">
-    <p>Logo</p>
+  <div class="topleft" ng-app="noTeRayesCoApp" ng-controller="visits">
+    <p>{{nVisits}} visitas</p>
   </div>
   <div class="middle">
     <div id="demo"></div>
   </div>
   <div class="bottomleft">
-    <p style="font-size: 12px">© 2017 |
-      <a href="https://github.com/nebur395" target="_blank" id="githubLink"> Rubén Moreno
-        <i class="fa fa-github"></i></a>
+    <p id="small-text">© 2017 |
+      <a href="https://github.com/nebur395" target="_blank" class="githubLink"> Rubén Moreno</a>
+      <i class="fa fa-github"></i>
+      <a href="https://github.com/Nicu1309" target="_blank" class="githubLink"> David Nicuesa</a>
     </p>
   </div>
 </div>
@@ -51,7 +55,7 @@
 
         // Output the result in an element with id="demo"
         document.getElementById("demo").innerHTML ="<h1>No te rayes CO, que sólo quedan</h1><hr>" +
-          "<p style='font-size:30px'>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s</p><hr>" +
+          "<p>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s</p><hr>" +
           "<h1>para pilares.</h1>";
 
         // If the count down is over, write some text
@@ -62,5 +66,13 @@
     }, 1000);
 </script>
 
+<script>
+  var app=angular.module('noTeRayesCoApp', []);
+  app.controller('visits', function($scope, $http) {
+      $http.get("getVisits").then(function(response) {
+          $scope.nVisits = 123123;// response.data;
+    });
+  })
+</script>
 </body>
 </html>
