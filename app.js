@@ -1,15 +1,17 @@
 var express = require('express');
 var app = express();
-var visitCount = 0;
+var nVisits = 0;
 app.use(express.static('public'));
 
-app.get('/', function(req,res){
-    visitCount++;
-    res.sendFile( __dirname + "/" + "index.html" );
+app.get('/getVisits', function(req,res){
+    nVisits++;
+    res.end(JSON.stringify(nVisits));
+    console.debug("GetVisits: %d",nVisits);
+
 });
 
 var server = app.listen(8080, function(){
     var port = server.address().port;
     var host = server.address().address;
-    console.log("Servidor corriendo en http://%s:%s",host,port);
+    console.log("Server running on http://%s:%s",host,port);
 });
