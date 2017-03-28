@@ -5,13 +5,13 @@ Si eres de esos ansiosos que no pueden esperar a la fecha, siempre puedes acudir
 
 ## Start using this App
 
-Assuming you already have [Ruby](http://guides.railsgirls.com/install#setup-for-linux) and [Bundler](http://bundler.io/) installed, you must fork this repo. After that, you have to clone your forked repo on your local machine on the directory you desire: `git clone https://github.com/your-github-username/Onirian_2.0`.
+Assuming you already have [node.js](http://nodejs.org) installed, you must fork this repo. After that, you have to clone your forked repo on your local machine on the directory you desire: `git clone https://github.com/your-github-username/Onirian_2.0`.
 
 ## Build & Run
 
-You can run the application use the following command: `rackup`.
+You can install the node dependencies executing `npm install`and run the application using the following command: `npm start`.
 
-Now you can access the server in http://localhost:9292.
+Now you can access the server in http://localhost:8080.
 
 # EditorConfig 
 [EditorConfig](http://editorconfig.org/) helps developers maintain consistent coding styles between different editors and IDEs. It is a file format for defining coding styles and a collection of text editor plugins that enable editors to read the file format and adhere to defined styles.
