@@ -10,7 +10,7 @@ app.get('/getVisits', function(req,res){
 
 });
 
-var server = app.listen(8080, function(){
+var server = app.listen(process.env.PORT || 8080, function(){
     var port = server.address().port;
     var host = server.address().address;
     console.log("Server running on http://%s:%s",host,port);
