@@ -51,3 +51,6 @@ classesa
 
 ## Node modules
 node_modules/
+
+## Npm specific
+*.log
