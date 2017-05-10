@@ -18,7 +18,7 @@
 
 <body>
 
-<div class="bgimg">
+<div id="bgImg" class="bgimg">
   <!--<div class="topleft" ng-app="noTeRayesCoApp" ng-controller="visits">
     <p>{{nVisits}} ansiosos</p>
   </div> -->
@@ -33,6 +33,12 @@
     </p>
   </div>
 </div>
+
+<script>
+  // Random bg
+  var bgs = ['', '', ''];
+  document.getElementById("bgImg").style.backgroundImage = 'url(images/bg-'+(Math.floor(Math.random()*4))+'.jpg';
+</script>
 
 <script>
     // Set the date we're counting down to
