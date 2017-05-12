@@ -26,8 +26,12 @@
   </div> -->
     <div class="middle">
       <div id="message">
-        <h1>No te rayes CO, que sólo quedan</h1><hr>
-        <div id="msg-countdown"><p style="visibility: hidden;">000d 00h 00m 00s</p></div><hr>
+        <h1>No te rayes CO, que sólo quedan</h1>
+        <hr>
+        <div id="msg-countdown">
+          <p style="visibility: hidden;">000d 00h 00m 00s</p>
+        </div>
+        <hr>
         <h1>para pilares.</h1>
       </div>
     </div>
@@ -41,9 +45,14 @@
   </div>
 
   <script>
+    // Fade in background
+    $('#bgImg').css('background', 'rgba(255, 255, 255, 0)');
+  </script>
+
+  <script>
     // Random bg, Math.random controls bg range [0..5]
-    document.getElementById("bgImg").style.backgroundImage = 
-    'linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(images/bg-' + (Math.floor(Math.random() * 5)) + '.jpg';
+    document.getElementById("bgImg").style.backgroundImage =
+      'linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(images/bg-' + (Math.floor(Math.random() * 5)) + '.jpg';
   </script>
 
   <script>
@@ -67,7 +76,7 @@
 
       if (distance > 0) {
         // Output the result in an element with id="message"
-        document.getElementById("msg-countdown").innerHTML = 
+        document.getElementById("msg-countdown").innerHTML =
           "<p>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s</p>";
       } else {
         // If the count down is over, write some text
@@ -75,7 +84,6 @@
         document.getElementById("message").innerHTML = "<h1>¡¡¡¡NO TE RAYES CO, QUE SON PILARESSSSS!!!!</h1>";
       }
     }, 1000);
-
   </script>
 
   <script>
@@ -85,7 +93,6 @@
         $scope.nVisits = response.data;
       });
     })
-
   </script>
 </body>
 
