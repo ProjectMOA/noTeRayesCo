@@ -61,6 +61,12 @@ body, html {
   text-shadow: 0px 0px 10px black;
 }
 
+.countdown {
+  width: 20ch;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
 .topleft {
   position: absolute;
   top: 0;

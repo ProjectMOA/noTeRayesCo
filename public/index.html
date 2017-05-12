@@ -72,7 +72,7 @@
       if (distance > 0) {
         // Output the result in an element with id="message"
         document.getElementById("msg-countdown").innerHTML =
-          "<p>" + days + "d " + hours + "h " + minutes + "m " + seconds + "s</p>";
+          '<p class="countdown">' + days + "d " + hours + "h " + minutes + "m " + seconds + "s</p>";
       } else {
         // If the count down is over, write some text
         clearInterval(countdownfunction);
