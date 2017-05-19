@@ -5,10 +5,10 @@ var app = express();
 app.use(express.static('public'));
 
 var connection = mysql.createConnection({
-  host     : process.env.MYSQL_HOST,
-  user     : process.env.MYSQL_USER,
-  password : process.env.MYSQL_PASS,
-  database : process.env.MYSQL_DB
+  host     : process.env.MYSQL_HOST ||,
+  user     : process.env.MYSQL_USER ||,
+  password : process.env.MYSQL_PASS ||,
+  database : process.env.MYSQL_DB ||
 });
 
 connection.connect(function(err) {
@@ -21,12 +21,13 @@ connection.connect(function(err) {
 
 app.get('/getVisits', function(req,res){
     var nVisits = 0;
-    connection.query('SELECT visits FROM stats', function (error, results, fields) {
+    connection.query('SELECT value FROM stats WHERE stats.id_stat=\'visits\'', function (error, results, fields) {
         if (error) throw error;
-        nVisits = results + 1;
-        res.end(JSON.stringify(nVisits));
-        console.log("GetVisits: " + nVisits);
-        connection.query('UPDATE stats SET ?', {visits: nVisits}, function (error, results, fields) {
+        console.log(results[0].value);
+        nVisits = results[0].value + 1;
+        res.send(JSON.stringify(nVisits));
+        var sql = 'UPDATE stats SET value=' + nVisits + ' WHERE id_stat=\'visits\'';
+        connection.query(sql, function (error, results, fields) {
             if (error) throw error;
         });
     });
