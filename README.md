@@ -13,7 +13,7 @@ También puedes ver si hay alguna issue pendiente y realizar tu propia pull requ
 
 Para empezar a utilizar esta página puedes acceder directamente al dominio de heroku: https://noterayesco.herokuapp.com/  
 
-Si quieres trabajar en local, asumiendo que se tiene instalado [node.js](http://nodejs.org), tienes que hacer fork del repositorio. Después, tienes que hacer `git clone` de tu fork en tu máquina local en el directorio que desees: `git clone https://github.com/your-github-username/Onirian_2.0`.
+Si quieres trabajar en local, asumiendo que se tiene instalado [node.js](http://nodejs.org), tienes que hacer fork del repositorio. Después, tienes que hacer `git clone` de tu fork en tu máquina local en el directorio que desees: `git clone https://github.com/your-github-username/noTeRayesCo`.
 
 ## Build & Run
 
