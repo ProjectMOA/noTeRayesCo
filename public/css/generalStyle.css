@@ -23,11 +23,11 @@ body, html {
   overflow: hidden;
   margin: -5px -10px -5px -10px;
 
-  -webkit-animation: fadein 1.5s;
-  -moz-animation: fadein 1.5s;
-  -ms-animation: fadein 1.5s;
-  -o-animation: fadein 1.5s;
-  animation: fadein 1.5s;
+  -webkit-animation: fadein 2.2s ease-in;
+  -moz-animation: fadein 2.2s ease-in;
+  -ms-animation: fadein 2.2s ease-in;
+  -o-animation: fadein 2.2s ease-in;
+  animation: fadein 2.2s ease-in;
 }
 
 /* BG FadeIn keyframes */
