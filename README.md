@@ -3,13 +3,13 @@ Cuenta atrás para poder decir la esperada frase del año: ***No te rayes CO, qu
 
 Si eres de esos ansiosos que no pueden esperar a la fecha, siempre puedes acudir a la frase:  ***No te rayes CO, que quedan 200 días para Pilares***.
 
-## Ayúdanos a mejorar
+## ¡Ayúdanos a mejorar!
 
 Cualquier mejora o sugerencia que se te ocurra puedes dejárnosla en forma de _pull Request_ o con una _issue_. Si tardamos en responder, lo dicho: no te rayes que ya casi son Pilares!
 
 También puedes ver si hay alguna _issue_ pendiente y crear tu propia _pull request_ para resolverla.
 
-## ¡Empezar a utilizar la aplicación!
+## Empieza a utilizar la aplicación
 
 Para empezar a utilizar esta página puedes acceder directamente al dominio de heroku: https://noterayesco.herokuapp.com/  
 
@@ -17,7 +17,7 @@ Si quieres trabajar en local, asumiendo que se tiene instalado [node.js](http://
 
 ## Build & Run
 
-Puedes instalar las dependencias de node del proyecto ejecutando `npm install`para después, poder ejecutar la aplicación con el comando `npm start`.
+Instala las dependencias del proyecto ejecutando `npm install`. Después, lanza la aplicación con el comando `npm start`.
 
 Ahora, puedes acceder al servidor en `http://localhost:8080`.
 
