@@ -33,11 +33,12 @@ app.get('/getVisits', function(req,res){
                 }
             });
         } else {
+            nVisits = 'unos cuantos'
+            res.send(JSON.stringify(nVisits));
             console.error("Couldn't retrieve visits from databse.");
         }
         
     });
-
 });
 
 var server = app.listen(process.env.PORT || 8080, function(){
