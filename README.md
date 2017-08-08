@@ -1,13 +1,13 @@
-# No te rayes CO, que son pilares
-Cuenta atrás para poder decir la esperada frase del año: ***No te rayes CO, que son pilares***.
+# No te rayes CO, que son Pilares
+Cuenta atrás para poder decir la esperada frase del año: ***No te rayes CO, que son Pilares***.
 
-Si eres de esos ansiosos que no pueden esperar a la fecha, siempre puedes acudir a la frase:  ***No te rayes CO, que quedan 200 días para pilares***.
+Si eres de esos ansiosos que no pueden esperar a la fecha, siempre puedes acudir a la frase:  ***No te rayes CO, que quedan 200 días para Pilares***.
 
-## Ayúdanos a mejorar :D
+## Ayúdanos a mejorar
 
-Cualquier mejora o sugerencia que se te ocurra puedes dejárnosla en forma de Pull Requests o con una Issue, pero si tardamos en responderos lo dicho, no os rayéis que ya casi son pilares.
+Cualquier mejora o sugerencia que se te ocurra puedes dejárnosla en forma de _pull Request_ o con una _issue_. Si tardamos en responder, lo dicho: no te rayes que ya casi son Pilares!
 
-También puedes ver si hay alguna issue pendiente y realizar tu propia pull request para resolverla :D
+También puedes ver si hay alguna _issue_ pendiente y crear tu propia _pull request_ para resolverla.
 
 ## ¡Empezar a utilizar la aplicación!
 
