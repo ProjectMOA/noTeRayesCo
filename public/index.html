@@ -21,9 +21,9 @@
 
   <div id="bgImg" class="bgimg"></div>
   <div class="main-content">
-    <div class="topleft" ng-app="noTeRayesCoApp" ng-controller="visits">
-    <p>{{nVisits}} ansiosos</p>
-  </div>
+    <div class="topleft" ng-app="noTeRayesCoApp" ng-controller="visits" ng-show="nVisits>=0">
+      <p>{{nVisits}} ansiosos</p>
+    </div>
     <div class="middle">
       <div id="message">
         <h1>No te rayes CO, que sólo quedan</h1>
