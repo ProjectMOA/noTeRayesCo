@@ -22,7 +22,10 @@ connection.connect(function(err) {
 app.get('/getVisits', function(req,res){
     var nVisits = 0;
     connection.query('SELECT value FROM stats WHERE stats.id_stat=\'visits\'', function (error, results, fields) {
-        if (error) throw error;
+        if (error) {
+          res.send(JSON.stringify("-1"));
+          return;
+        };
         console.log(results[0].value);
         nVisits = results[0].value + 1;
         res.send(JSON.stringify(nVisits));
