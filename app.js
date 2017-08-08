@@ -22,22 +22,17 @@ connection.connect(function(err) {
 app.get('/getVisits', function(req,res){
     var nVisits = 0;
     connection.query('SELECT value FROM stats WHERE stats.id_stat=\'visits\'', function (error, results, fields) {
-        if (!error) {
-            console.log(results[0].value);
-            nVisits = results[0].value + 1;
-            res.send(JSON.stringify(nVisits));
-            var sql = 'UPDATE stats SET value=' + nVisits + ' WHERE id_stat=\'visits\'';
-            connection.query(sql, function (error, results, fields) {
-                if (error) {
-                    console.error("Couldn't update visits from databse.");
-                }
-            });
-        } else {
-            nVisits = 'unos cuantos'
-            res.send(JSON.stringify(nVisits));
-            console.error("Couldn't retrieve visits from databse.");
-        }
-        
+        if (error) {
+            res.send(JSON.stringify("-1"));
+            return;
+        };
+        console.log(results[0].value);
+        nVisits = results[0].value + 1;
+        res.send(JSON.stringify(nVisits));
+        var sql = 'UPDATE stats SET value=' + nVisits + ' WHERE id_stat=\'visits\'';
+        connection.query(sql, function (error, results, fields) {
+            if (error) throw error;
+        });
     });
 });
 
