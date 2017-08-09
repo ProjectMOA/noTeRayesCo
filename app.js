@@ -27,7 +27,7 @@ app.get('/getVisits', function(req,res){
             console.log(results[0].value);
             nVisits = results[0].value + 1;
             res.send(JSON.stringify(nVisits));
-            var sql = 'UPDATE stats SET value=' + nVisits + ' WHERE id_stat=\'visits\'';
+            var sql = 'UPDATE stats SET value = value + 1 WHERE id_stat=\'visits\'';
             connection.query(sql, function (error, results, fields) {
                 if (error) {
                     console.error("Couldn't update visits from databse.");
