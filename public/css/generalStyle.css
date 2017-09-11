@@ -8,8 +8,7 @@ body, html {
   position: fixed;
   left: 0;
   right: 0;
-  height: 100%;
-  height: calc(100% + 11px);
+  height: calc(150% + 11px);
 
   background-position: center;
   background-size: cover;
@@ -23,11 +22,11 @@ body, html {
   overflow: hidden;
   margin: -5px -10px -5px -10px;
 
-  -webkit-animation: fadein 2.2s ease-in;
-  -moz-animation: fadein 2.2s ease-in;
-  -ms-animation: fadein 2.2s ease-in;
-  -o-animation: fadein 2.2s ease-in;
-  animation: fadein 2.2s ease-in;
+  -webkit-animation: fadein 2.2s ease-in, slowmove 40s linear;
+  -moz-animation: fadein 2.2s ease-in, slowmove 40s linear;
+  -ms-animation: fadein 2.2s ease-in, slowmove 40s linear;
+  -o-animation: fadein 2.2s ease-in, slowmove 40s linear;
+  animation: fadein 2.2s ease-in, slowmove 40s linear;
 }
 
 /* BG FadeIn keyframes */
@@ -50,6 +49,28 @@ body, html {
 @-o-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+}
+
+/* BG slowmove keyframes */
+@keyframes slowmove {
+  from { transform: scale(1.1, 1.1) translateX(-5%);}
+  to   { transform: scale(1.3, 1.3) translateX(5%); }
+}
+@-moz-keyframes slowmove {
+  from { -moz-transform: scale(1.1, 1.1) translateX(-5%);}
+  to   { -moz-transform: scale(1.3, 1.3) translateX(5%); }
+}
+@-webkit-keyframes slowmove {
+  from { -webkit-transform: scale(1.1, 1.1) translateX(-5%);}
+  to   { -webkit-transform: scale(1.3, 1.3) translateX(5%); }
+}
+@-ms-keyframes slowmove {
+  from { -ms-transform: scale(1.1, 1.1) translateX(-5%);}
+  to   { -ms-transform: scale(1.3, 1.3) translateX(5%); }
+}
+@-o-keyframes slowmove {
+  from { -o-transform: scale(1.1, 1.1) translateX(-5%);}
+  to   { -o-transform: scale(1.3, 1.3) translateX(5%); }
 }
 
 .main-content {
