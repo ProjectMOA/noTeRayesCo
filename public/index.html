@@ -19,11 +19,11 @@
 </head>
 
 <body>
+
   <div id="bgImg" class="bgimg"></div>
   <div class="main-content">
     <div class="topleft" ng-app="noTeRayesCoApp" ng-controller="visits">
       <p>Ya somos {{nVisits}} ansiosos!</p>
-      <button ng-click="playMyAudio()"> AUDIO!!! </button>
     </div>
     <div class="middle">
       <div id="message">
@@ -90,11 +90,7 @@
       $http.get("getVisits").then(function (response) {
         $scope.nVisits = response.data;
       });
-      $scope.playMyAudio = function(){
-        var audio = new Audio('music/audioFile.mp3');
-        audio.play();
-      };
-    });
+    })
   </script>
 </body>
 
