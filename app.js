@@ -34,7 +34,7 @@ app.get('/getVisits', function(req,res){
                 }
             });
         } else {
-            nVisits = '1534'
+            nVisits = 1535;
             res.send(JSON.stringify(nVisits));
             console.error("Couldn't retrieve visits from databse.");
         }
