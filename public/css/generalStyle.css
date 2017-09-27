@@ -150,7 +150,7 @@ a:focus, a:hover, a {
   border-radius: 50%;
   cursor: pointer;
   color: #ffffff;
-  transition: 0.7s;
+  transition: 0.4s;
 }
 
 #audioMessage .fa:hover {
