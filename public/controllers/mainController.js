@@ -1,6 +1,6 @@
 angular.module('noTeRayesCoApp', [])
 
-    .controller('mainCtrl', ['$scope', '$http', function ($scope, $http) {
+    .controller('mainCtrl', ['$scope', '$http', '$interval', function ($scope, $http, $interval) {
 
         // True if Pilars have started
         $scope.pilares = false;
@@ -26,7 +26,7 @@ angular.module('noTeRayesCoApp', [])
         $scope.countDownDate = new Date("Oct 7, 2017 00:00:00").getTime();
 
         // Update the count down every 1 second
-        $scope.countDownFunction = setInterval(function () {
+        $scope.countDownFunction = $interval(function () {
 
           // Get todays date and time
           $scope.now = new Date().getTime();
@@ -39,16 +39,12 @@ angular.module('noTeRayesCoApp', [])
           $scope.hours = Math.floor(($scope.distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           $scope.minutes = Math.floor(($scope.distance % (1000 * 60 * 60)) / (1000 * 60));
           $scope.seconds = Math.floor(($scope.distance % (1000 * 60)) / 1000);
-          $scope.$apply();
 
           if ($scope.distance <= 0) {
             $scope.pilares = true;
-            $scope.$apply();
-            // If the count down is over, write some text
-            clearInterval($scope.countDownFunction);
+            // If the count down is over, the interval is stopped
+            $interval.cancel($scope.countDownFunction);
           }
-
-
         }, 1000);
 
     }]);
