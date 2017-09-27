@@ -57,7 +57,7 @@
 
   <script>
     // Set the date we're counting down to
-    var countDownDate = new Date("Oct 7, 2017 00:00:00").getTime();
+    var countDownDate = new Date("Sep 7, 2017 00:00:00").getTime();
 
     // Update the count down every 1 second
     var countdownfunction = setInterval(function () {
@@ -81,9 +81,10 @@
       } else {
         // If the count down is over, write some text
         clearInterval(countdownfunction);
-        document.getElementById("message").innerHTML = '<h3>NO TE RAYES CO,</h3><h1>¡QUE SON PILARESSSSS!</h1>';
+        document.getElementById("message").innerHTML = '<h3>NO TE RAYES CO,</h3><h1>¡QUE SON PILARESSSSS!</h1><p id="audioMessage">Si aún así te estás rayando, haz click en este botón: <i class="fa fa-play-circle" aria-hidden="true"></i></p>';
       }
     }, 1000);
+
   </script>
 
 </body>
