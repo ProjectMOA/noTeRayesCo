@@ -16,13 +16,15 @@
 
   <!-- css own imports -->
   <link rel="stylesheet" href="css/generalStyle.css" />
+  <!-- controllers -->
+  <script src="controllers/visitsController.js"></script>
 </head>
 
-<body>
+<body ng-app="noTeRayesCoApp">
 
   <div id="bgImg" class="bgimg"></div>
   <div class="main-content">
-    <div class="topleft" ng-app="noTeRayesCoApp" ng-controller="visits">
+    <div class="topleft" ng-controller="visits">
       <p>Ya somos {{nVisits}} ansiosos!</p>
     </div>
     <div class="middle">
@@ -84,14 +86,6 @@
     }, 1000);
   </script>
 
-  <script>
-    var app = angular.module('noTeRayesCoApp', []);
-    app.controller('visits', function ($scope, $http) {
-      $http.get("getVisits").then(function (response) {
-        $scope.nVisits = response.data;
-      });
-    })
-  </script>
 </body>
 
 </html>
