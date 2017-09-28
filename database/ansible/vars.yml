@@ -1,0 +1,10 @@
+mysql_config_file: /etc/mysql/mariadb.conf.d/50-server.cnf
+
+mysql_root_password: toor
+
+mysql_remote_username: noterayes
+mysql_remote_password: noterayes
+
+mysql_db_name: noterayes
+
+initial_visits: 0
