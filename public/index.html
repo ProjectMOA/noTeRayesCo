@@ -24,7 +24,7 @@
 <body ng-app="noTeRayesCoApp" ng-controller="mainCtrl">
   <div id="bgImg" class="bgimg"></div>
   <div class="main-content">
-    <div class="topleft">
+    <div class="topleft medium-text">
       <p>Ya somos {{nVisits}} ansiosos!</p>
     </div>
     <div class="middle">
@@ -42,14 +42,17 @@
 
       <div ng-hide="!pilares">
         <h3>NO TE RAYES CO,</h3><h1>¡QUE SON PILARESSSSS!</h1>
-        <p id="audioMessage">Si aún así te estás rayando, haz click en este botón:
-          <i ng-click="playMyAudio()" class="fa fa-play-circle" aria-hidden="true"></i>
-        </p>
+          <p class="small-text">Haz click aquí</p>
+          <i ng-click="playMyAudio()" aria-hidden="true"
+            class="fa fa-play-circle fa-lg" id="audioButton"></i>
+          <p class="small-text">Programa de las Fiestas Del Pilar
+            <a href="https://github.com/nebur395" target="_blank"
+              class="githubLink"> aquí</a></p>
       </div>
     </div>
 
     <div class="bottomleft">
-      <p id="small-text">© 2017 |
+      <p class="small-text">© 2017 |
         <a href="https://github.com/nebur395" target="_blank" class="githubLink"> Rubén Moreno</a>
         <i class="fa fa-github"></i>
         <a href="https://github.com/Nicu1309" target="_blank" class="githubLink"> David Nicuesa</a>
