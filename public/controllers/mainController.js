@@ -19,11 +19,17 @@ angular.module('noTeRayesCoApp', [])
         $scope.audio = new Audio('audio/audioFile.mp3');
 
         $scope.playMyAudio = function() {
-            $scope.audio.play();
+            if ((Math.floor(Math.random() * 4)) <=1) {
+                console.log("pause");
+                $scope.audio.currentTime = 0;
+            } else {
+                console.log("play");
+                $scope.audio.play();
+            }
         };
 
         // Set the date we're counting down to
-        $scope.countDownDate = new Date("Oct 7, 2017 00:00:00").getTime();
+        $scope.countDownDate = new Date("Sep 7, 2017 00:00:00").getTime();
 
         // Update the count down every 1 second
         $scope.countDownFunction = $interval(function () {
