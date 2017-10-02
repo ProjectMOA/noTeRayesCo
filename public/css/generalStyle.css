@@ -146,6 +146,17 @@ a:focus, a:hover, a {
   font-size: 15px;
 }
 
+.agendaIconLink {
+  border-radius: 50%;
+  margin: auto;
+  max-height: 30px;
+  max-width: 50px;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+  border: 1px solid rgba(158, 158, 158, 0.3);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
 #audioButton {
   border-radius: 50%;
   cursor: pointer;
