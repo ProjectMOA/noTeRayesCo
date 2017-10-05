@@ -1,0 +1,132 @@
+- hosts: db
+  vars_files:
+    - vars.yml
+  become: True
+  gather_facts: False
+
+  tasks:
+    # First of all, check python presence
+    - name: install python 2 (iff necessary)
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      changed_when: False
+
+    # Install everything necessary
+    - name: Update APT repositories
+      apt:
+        update_cache=yes
+      changed_when: False
+
+    - name: install mariadb
+      apt:
+        pkg=mariadb-server
+        state=latest
+
+    - name: install python-mysqldb
+      apt:
+        pkg=python-mysqldb
+        state=present
+
+    # Secure previous installation
+    - name: set root password
+      mysql_user:
+        name=root
+        host={{ item }}
+        password={{ mysql_root_password }}
+        state=present
+      with_items:
+        - localhost
+        - 127.0.0.1
+        - ::1
+
+    - name: reload privilege tables
+      command: 'mysql -ne "{{ item }}"'
+      with_items:
+        - "FLUSH PRIVILEGES"
+      changed_when: False
+
+    - name: add .my.cnf
+      template:
+        src=my.cnf.j2
+        dest=/root/.my.cnf
+        owner=root
+        group=root
+        mode=0600
+
+    - name: remove anonymous users
+      command: 'mysql -ne "{{ item }}"'
+      with_items:
+        - "DELETE FROM mysql.user WHERE User=''"
+      changed_when: False
+
+    - name: disallow root login remotely
+      command: 'mysql -ne "{{ item }}"'
+      with_items:
+        - "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1')"
+      changed_when: False
+
+    - name: remove test database and access to it
+      command: 'mysql -ne "{{ item }}"'
+      with_items:
+        - "DROP DATABASE IF EXISTS test"
+        - "DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%'"
+      changed_when: False
+
+    - name: reload privilege tables
+      command: 'mysql -ne "{{ item }}"'
+      with_items:
+        - "FLUSH PRIVILEGES"
+      changed_when: False
+
+    # Create the particular structure
+    - name: create database
+      mysql_db:
+        name={{ mysql_db_name }}
+        state=present
+
+    - name: create remote user
+      mysql_user:
+        name={{ mysql_remote_username }}
+        host={{ item }}
+        password={{ mysql_remote_password }}
+        state=present
+      with_items:
+        - "%"
+
+    - name: grant permissions to the user
+      command: 'mysql -ne "{{ item }}"'
+      with_items:
+        - "GRANT ALL PRIVILEGES ON {{ mysql_db_name }}.* to '{{ mysql_remote_username }}'@'%'"
+      changed_when: False
+
+    - name: cleanup previous installation
+      command: 'mysql -D {{ mysql_db_name }} -ne "{{ item }}"'
+      with_items:
+        - "DROP TABLE IF EXISTS stats"
+      changed_when: False
+
+    - name: create tables
+      command: 'mysql -D {{ mysql_db_name }} -ne "{{ item }}"'
+      with_items:
+        - "CREATE TABLE IF NOT EXISTS stats (id_stat CHAR(100),value INTEGER, PRIMARY KEY (id_stat))"
+      changed_when: False
+
+    - name: initialize table
+      command: 'mysql -D {{ mysql_db_name }} -ne "{{ item }}"'
+      with_items:
+        - "INSERT INTO stats (id_stat, value) VALUES ('visits', {{ initial_visits }})"
+      changed_when: False
+
+    # Finally, allow external connections
+    - name: change mariadb configuration to allow external connections
+      replace:
+        dest={{ mysql_config_file }}
+        regexp='^bind-address'
+        replace='#bind-address'
+      notify:
+      - restart mariadb
+
+  handlers:
+    - name: restart mariadb
+      service:
+        name=mysql
+        state=restarted

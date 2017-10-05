@@ -34,11 +34,10 @@ app.get('/getVisits', function(req,res){
                 }
             });
         } else {
-            nVisits = '1534'
+            nVisits = 3535;
             res.send(JSON.stringify(nVisits));
             console.error("Couldn't retrieve visits from databse.");
         }
-
     });
 });
 

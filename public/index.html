@@ -16,29 +16,55 @@
 
   <!-- css own imports -->
   <link rel="stylesheet" href="css/generalStyle.css" />
+  <!-- controllers -->
+  <script src="controllers/mainController.js"></script>
 </head>
 
-<body>
+
+<body ng-app="noTeRayesCoApp" ng-controller="mainCtrl">
   <div id="bgImg" class="bgimg"></div>
   <div class="main-content">
-    <div class="topleft" ng-app="noTeRayesCoApp" ng-controller="visits">
+    <div class="topleft medium-text" style="visibility:hidden;" name="init-hidden">
       <p>Ya somos {{nVisits}} ansiosos!</p>
-      <button ng-click="playMyAudio()"> AUDIO!!! </button>
     </div>
     <div class="middle">
-      <div id="message">
+
+      <div ng-hide="pilares" style="visibility: hidden;" name="init-hidden">
         <h1>No te rayes CO, que sólo quedan</h1>
         <hr>
         <div id="msg-countdown">
-          <p style="visibility: hidden;">000d 00h 00m 00s</p>
+          <p class="countdown"> {{days}}d {{hours}}h {{minutes}}m {{seconds}}s</p>
         </div>
         <hr>
         <h1>para Pilares.</h1>
       </div>
+
+      <div ng-hide="!pilares" style="visibility:hidden;" name="init-hidden">
+        <h3>NO TE RAYES CO,</h3><h1>¡QUE SON PILARESSSSS!</h1>
+          <p class="small-text">Si aún así te estás rayando, haz click en el botón</p>
+          <i ng-click="playMyAudio()" aria-hidden="true"
+            class="fa fa-play-circle fa-lg" id="audioButton"></i>
+          <p class="small-text">O echa un vistazo al programa de las Fiestas Del Pilar</p>
+          <p>
+            <a href="https://www.soydezaragoza.es/programa-fiestas-del-pilar/" target="_blank"
+              class="githubLink">
+              <img src="./images/soydezaragoza.png" class="agendaIconLink" alt="Soy de Zaragoza">
+            </a>
+            <a href="http://www.heraldo.es/ocio/fiestas-del-pilar-zaragoza/" target="_blank"
+              class="githubLink">
+              <img src="./images/heraldo.png" class="agendaIconLink" alt="Heraldo de Aragón">
+            </a>
+            <a href="https://zaragenda.com/programa-agenda-fiestas-del-pilar/" target="_blank"
+              class="githubLink">
+              <img src="./images/zaragenda.png" class="agendaIconLink" alt="Zaragenda">
+            </a>
+          </p>
+      </div>
     </div>
+
     <div class="bottomleft">
-      <p id="small-text">© 2017 |
-        <a href="https://github.com/nebur395" target="_blank" class="githubLink"> Rubén Moreno</a>
+      <p class="small-text">© 2017 |
+        <a href="https://nebur395.github.io/" target="_blank" class="githubLink"> Rubén Moreno</a>
         <i class="fa fa-github"></i>
         <a href="https://github.com/Nicu1309" target="_blank" class="githubLink"> David Nicuesa</a>
         <i class="fa fa-github"></i>
@@ -55,49 +81,5 @@
       'linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(images/bg-' + (Math.floor(Math.random() * 7)) + '.jpg';
   </script>
 
-  <script>
-    // Set the date we're counting down to
-    var countDownDate = new Date("Oct 7, 2017 00:00:00").getTime();
-
-    // Update the count down every 1 second
-    var countdownfunction = setInterval(function () {
-
-      // Get todays date and time
-      var now = new Date().getTime();
-
-      // Find the distance between now an the count down date
-      var distance = countDownDate - now;
-
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      if (distance > 0) {
-        // Output the result in an element with id="message"
-        document.getElementById("msg-countdown").innerHTML =
-          '<p class="countdown">' + days + "d " + hours + "h " + minutes + "m " + seconds + "s</p>";
-      } else {
-        // If the count down is over, write some text
-        clearInterval(countdownfunction);
-        document.getElementById("message").innerHTML = '<h3>NO TE RAYES CO,</h3><h1>¡QUE SON PILARESSSSS!</h1>';
-      }
-    }, 1000);
-  </script>
-
-  <script>
-    var app = angular.module('noTeRayesCoApp', []);
-    app.controller('visits', function ($scope, $http) {
-      $http.get("getVisits").then(function (response) {
-        $scope.nVisits = response.data;
-      });
-      $scope.playMyAudio = function(){
-        var audio = new Audio('music/audioFile.mp3');
-        audio.play();
-      };
-    });
-  </script>
 </body>
-
 </html>
