@@ -24,28 +24,28 @@
 <body ng-app="noTeRayesCoApp" ng-controller="mainCtrl">
   <div id="bgImg" class="bgimg"></div>
   <div class="main-content">
-    <div class="topleft medium-text">
+    <div class="topleft medium-text" style="visibility:hidden;" name="init-hidden">
       <p>Ya somos {{nVisits}} ansiosos!</p>
     </div>
     <div class="middle">
 
-      <div ng-hide="pilares">
+      <div ng-hide="pilares" style="visibility: hidden;" name="init-hidden">
         <h1>No te rayes CO, que sólo quedan</h1>
         <hr>
         <div id="msg-countdown">
           <p class="countdown"> {{days}}d {{hours}}h {{minutes}}m {{seconds}}s</p>
-          <p style="visibility: hidden;">000d 00h 00m 00s</p>
         </div>
         <hr>
         <h1>para Pilares.</h1>
       </div>
 
-      <div ng-hide="!pilares">
+      <div ng-hide="!pilares" style="visibility:hidden;" name="init-hidden">
         <h3>NO TE RAYES CO,</h3><h1>¡QUE SON PILARESSSSS!</h1>
           <p class="small-text">Si aún así te estás rayando, haz click en el botón</p>
           <i ng-click="playMyAudio()" aria-hidden="true"
             class="fa fa-play-circle fa-lg" id="audioButton"></i>
-          <p class="small-text">O echa un vistazo al programa de las Fiestas Del Pilar en:
+          <p class="small-text">O echa un vistazo al programa de las Fiestas Del Pilar</p>
+          <p>
             <a href="https://www.soydezaragoza.es/programa-fiestas-del-pilar/" target="_blank"
               class="githubLink">
               <img src="./images/soydezaragoza.png" class="agendaIconLink" alt="Soy de Zaragoza">
