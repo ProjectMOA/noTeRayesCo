@@ -1,0 +1,2 @@
+[db]
+noterayes-db       ansible_ssh_host=<your_server_ip>
