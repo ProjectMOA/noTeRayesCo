@@ -16,7 +16,7 @@ angular.module('noTeRayesCoApp', [])
 
 
         // Audio path variable
-        $scope.audio = new Audio('audio/audioFile-' + Math.floor(Math.random() * 4) + '.mp3');
+        $scope.audio = new Audio('audio/audioFile-' + Math.floor(Math.random() * 5) + '.mp3');
         $scope.playMyAudio = function() {
             $scope.audio.currentTime = 0;
             $scope.audio.play();
