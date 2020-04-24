@@ -23,7 +23,7 @@ angular.module('noTeRayesCoApp', [])
         };
 
         // Set the date we're counting down to
-        $scope.countDownDate = new Date("Oct 7, 2018 21:00:00 GMT+2").getTime();
+        $scope.countDownDate = new Date("Oct 7, 2020 21:00:00 GMT+2").getTime();
 
         // Update the count down every 1 second
 
